@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            text-align: left;
+            width: 200px;
+            height:200px;
+        }
+        input{
+            margin-top: 10px;;
+        }
+    </style>
+</head>
+<body>
+<form action="index.php?m=admin&c=cat&a=addcat" method="post">
+    <select name="pid" id="">
+        <option value="0">顶级分类</option>
+        {foreach $trees as $v}
+        <option value="{$v['cid']}">{$v['cname']}</option>
+        {/foreach}
+    </select>
+    <input type="text" name="cname">
+    <input type="submit" style="background: dodgerblue;color: #fff">
+</form>
+</body>
+</html>

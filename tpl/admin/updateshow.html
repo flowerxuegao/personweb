@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{$css}addshow.css">
+    <script src="{$js}upload.js"></script>
+    <script src="{$js}addshow.js"></script>
+</head>
+<body>
+<form action="index.php?m=admin&c=show&a=updates&sid={$sid}" method="post">
+
+    所属分类：<select name="cid" id="">
+    <option value="0">一级分类</option>
+    {foreach $trees as $v}
+    <option value={$v['cid']} {if $v['cid']==$cid}selected{/if}>{$v['cname']}</option>
+    {/foreach}
+</select>
+    <br>
+    标题：<input type="text" name="title" value={$title}>
+    <br>
+    内容：<textarea name="con" cols="30" rows="10">{$con}</textarea>
+    <br>
+    普通文章：<input type="radio" name="status" value="0" {if $status==0}checked{/if}>
+    登陆文章：<input type="radio" name="status" value="1"{if  $status==1}checked{/if}>
+    <br>
+    <input type="submit" value="添加文本">
+</form>
+</body>
+</html>

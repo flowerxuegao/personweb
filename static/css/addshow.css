@@ -1,0 +1,19 @@
+.box{
+    position: relative;
+    width:200px;height:20px;
+    border:1px solid #000;
+    margin-top:5px;
+}
+.progress{
+    background:red;
+    width:0;
+    height:100%;
+    position: absolute;
+    left:0;top:0;
+    text-align: center;
+}
+.imgbox{
+    width:200px;
+    height:200px;
+    border:1px solid black;
+}

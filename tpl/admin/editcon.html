@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            text-align: left;
+            width: 200px;
+            height:200px;
+        }
+        input{
+            margin-top: 10px;;
+        }
+        .box{
+            position: relative;
+            width:200px;height:20px;
+            border:1px solid #000;
+        }
+        .progress{
+            background:red;
+            width:0;
+            height:100%;
+            position: absolute;
+            left:0;top:0;
+            text-align: center;
+        }
+    </style>    <script>
+    window.onload=function(){
+        /*
+         * 文件对象
+         * 进度条的dom对象
+         * 预览图片的容器
+         * */
+
+        var one=document.getElementsByTagName("input")[1];
+        var two=document.getElementsByClassName("progress")[0];
+        var three=document.getElementsByTagName("img")[0];
+        var uploadObj = new upload("index.php?m=admin&c=show&a=upload",one,two,three, function (e) {
+//            document.getElementsByName("imgurl")[0].value=e;
+            alert(e);
+        });
+        uploadObj.up();
+
+    }
+</script>
+    <script src="{$js}jquery-3.1.0.js"></script>
+    <script src="{$js}upload.js"></script>
+
+
+</head>
+<body>
+<form action="index.php?m=admin&c=show&a=showadd" method="post">
+    所属分类：<select name="pid" id="">
+    <option value="0">顶级分类</option>
+    {foreach $trees as $v}
+    <option value="{$v['cid']}" {if $pid==$v['cid']}selected{/if}>{$v['cname']}</option>
+    {/foreach}
+</select><br>
+    标题：<input type="text" name="title"><br>
+    内容：<textarea name="con" id="" cols="30" rows="10"></textarea>
+    <br>
+    <input type="file" >
+    <input type="hidden" name="imgurl">
+    <div class="img">
+        <img src="" alt="" width="200">
+    </div>
+    <div class="box">
+
+        <div class="progress">
+
+        </div>
+    </div>
+    普通文章<input type="radio" name="status" value="0" checked>
+    登录文章<input type="radio" name="status" value="1">
+    <br>
+    <input type="submit" style="background: dodgerblue;color: #fff">
+</form>
+</body>
+<script>
+
+</script>
+</html>
+<!--文件的处理-
+如何使用ajax
+->

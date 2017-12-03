@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{$css}index1.css">
+    <script src="../../static/js/jquery-3.1.0.js"></script>
+</head>
+<body style="height: 100%;background: url('{$img}bg/blue.jpg')">
+<div id="nav-wrapper">
+    <ul id="nav" class="sf-menu sf-js-enabled sf-shadow">
+        <li class="logo">
+            <a href="">
+                <img src="{$img}logo.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="home.html">首页</a>
+        </li>
+        <li class="current-menu-item">
+            <a href="index.php?m=index&c=index&a=category">分类</a>
+        </li>
+        <li>
+            <a href="index.php?m=index&c=index&a=lists">列表</a>
+        </li>
+        <li>
+            <a href="">详情</a>
+        </li>
+        <!--{if $userlogin}-->
+        <!--<li style="float:right"><a href="index.php?m=index&c=login&a=loginout">登录</a></li>-->
+        <!--{else}-->
+        <li style="float:right"><a href="index.php?m=index&c=login&a=login">登录</a></li>
+        <li style="float:right"><a href="index.php?m=index&c=login&a=reg">注册</a></li>
+        <!--{/if}-->
+        <li class="search-box">
+            <form action="">
+                <input type="text" value="搜索" id="s">
+            </form>
+        </li>
+    </ul>
+</div>
+<div id="page-wrap">
+
+    <!-- content -->
+    <!-- content -->
+    <div id="content">
+    <div id="sidebar">
+        <!-- project tags -->
+        <h6 class="side-title">Categories</h6>
+        <ul class="cat-list">
+            {foreach $menu as $v}
+            <li>
+                <a href="" >{$v["cname"]} </a>
+                {foreach $v["son"] as $v1}
+                <li>
+                    <a href="index.php?m=index&c=index&a=lists&cid={$v1['cid']}">{$v1["cname"]}</a>
+                </li>
+            {/foreach}
+            </li>
+            {/foreach}
+        </ul>
+        <!-- ENDS project tags -->
+    </div>
+</div>
+</div>
+</body>
+</html>

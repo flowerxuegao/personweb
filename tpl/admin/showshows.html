@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{$css}bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<table  class="table table-bordered table-hover text-center">
+    <tr>
+        <th>sid</th>
+        <th>标题</th>
+        <th>内容</th>
+        <th>图片地址 </th>
+        <th>文章网址</th>
+        <th>状态标识</th>
+        <th>aid</th>
+        <th>cid</th>
+        <th>添加时间</th>
+        <th>
+            <a href=""><botton>修改</botton></a>
+            <a href=""><botton>删除</botton></a>
+        </th>
+    </tr>
+    {foreach $data as $v}
+    <tr>
+        <th>{$v["sid"]}</th>
+        <th>{$v['title']}</th>
+        <th>{$v['con']}</th>
+        <th>{$v['imgurl']} </th>
+        <th>{$v['url']}</th>
+        <th>{$v['status']}</th>
+        <th>{$v['aid']}</th>
+        <th>{$v['cid']}</th>
+        <th>{$v['stime']}</th>
+        <th>
+            <a href="index.php?m=admin&c=show&a=updateshow&sid={$v['sid']}"  type="button"  class="btn btn-success"><botton>修改</botton></a>
+            <a href="index.php?m=admin&c=show&a=delshow&sid={$v['sid']}"  type="button"  class="btn btn-danger"><botton>删除</botton></a>
+        </th>
+    </tr>
+    {/foreach}
+</table>
+</body>
+</html>

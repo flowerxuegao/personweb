@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{$css}bootstrap/css/bootstrap.min.css">
+    <script src="{$js}jquery-3.1.0.js"></script>
+    <style>
+        th,td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table class="table table-bordered table-striped table-hover" style="width:80%;margin: 15px auto">
+    <tr style="background: #D7EBFA;color: #2D88D7">
+        <th>id</th>
+        <th>内容</th>
+        <th>发表时间</th>
+        <th>操作</th>
+    </tr>
+    {foreach $data as $v}
+    <tr>
+        <td>{$v["rid"]}</td>
+        <td>{$v["con"]}</td>
+        <td>{$v["rtime"]}</td>
+        <td>
+            <a  href="index.php?m=admin&c=show&a=delrel&rid={$v['rid']}"><button class="btn btn-danger">删除</button></a>
+        </td>
+    </tr>
+    {/foreach}
+</table>
+</body>
+<script>
+
+</script>
+</html>

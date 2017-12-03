@@ -1,0 +1,54 @@
+body,ul,li,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.noticeBox{
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    height:200px;
+    background: dodgerblue;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(100,100,100,0.7);
+}
+.noticeBox h3{
+    padding: 15px 0;
+}
+.noticeBox span{
+    color: red;;
+}
+.noticeCon{
+    line-height: 50px;
+}
+/*对响应式的理解，应用场合   mvc架构模式，给工作流带来的便利   面向对象    canvas 能做什么，完成什么工作  表单验证，为什么，怎么用*/
+/*一个网站能够兼容多个终端——而不是为每个终端做一个特定的版本，
+面对不同分辨率设备灵活性强
+能够快捷解决多设备显示适应问题
+兼容各种设备工作量大，效率低下
+代码累赘，会出现隐藏无用的元素，加载时间加长
+Media Query（媒介查询）
+表单验证  web1.0仅仅呈现内容    2.0人机交互，表单兴起   例如商城   3.0 表单采集信息
+常用框架自定义规则接口，非常方便实现验证
+在提交到服务器之前先进行一些验证，代码执行较为高效，
+如何实现：ajax进行异步验证，用户体验整更好，无需刷新页面即可完成
+多段情况下诞生的产物，相应不同终端，
+原理css3@media   在此基础上拓展   栅格化概念   最常用的是12栅格化
+常见的框驾，比较臃肿，自己实现
+
+
+mvc一套数据一种模型  所有的应用合适的视图呈现合适的数据
+前后台分离，控制器将合适的数据放到合适的视图中
+
+面向对象  就是以人类的思维编写程序   把我们研究的事物当成对象   实例化对象调用属性方法
+
+canvas 重绘
+解决任意关于像素的问题   比如碰撞   满足我们对*/
